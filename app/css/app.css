@@ -1,10 +1,27 @@
-.pesho {
-	color:red;
+body h1,
+body p {
+  margin: 0;
 }
-
-.pesho:hover {
-	color:blue 
+body header {
+  border: 1px solid #507E32;
 }
-.even_row {
-	background: red;
+body header h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 15px;
+}
+body main {
+  background-color: #E2F0D9;
+}
+body footer {
+  border-top: 1px solid #507E32;
+}
+body footer p {
+  font-size: 0.9em;
+  padding: 10px;
+}
+body header,
+body footer {
+  background-color: #A9D18E;
+  text-shadow: 2px 2px #CAE2BA;
 }
