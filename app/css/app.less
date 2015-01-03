@@ -30,19 +30,23 @@ body {
 	}
 
 	.imageSize {
-		max-width: 150px;
-		max-height: 150px;
+		max-width: 100%;
+		padding: 20px;
 	}
 
 	.partContainer {
 		border: 1px solid #507E32;
 		background-color: #A9D18E;
-		box-shadow: 0 0 5px #BFCAB7;
+		box-shadow: 0 0 5px #507E32;
 		padding: 15px 25px;
 		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.mainLeftContainer {
 
 		p {
-			font-size: 1.6em;
+			font-size: 1.4em;
 			text-align: center;
 		}
 
@@ -52,9 +56,74 @@ body {
 			width: 80%;
 			margin: 10px auto;
 		}
+	}
 
+	.mainRightContainer {
+
+		p {
+			font-size: 1.6em;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		hr {
+			border: none;
+			background-color: #507E32;
+			height: 1px;
+			box-shadow: 0 0 4px #507E32;
+			margin: 10px;
+		}
+		
 		ul {
-			list-style: none;
+
+			li {
+				border: 1px solid #A9D18E;
+				font-size: 1.2em;
+				padding: 5px 20px;
+
+				&:hover {
+					border: 1px solid #7F6000;
+					background-color: #DAA600;
+				}
+			}
 		}
 	}
-}
+
+	.mainCenterContainer {
+		
+		ul {
+
+			li {
+
+				h2 {
+					font-size: 1.6em;
+					font-weight: bold;
+					margin: 10px;
+
+					span {
+						font-size: 0.7em;
+					}
+				}
+
+				p {
+					text-align: justify;
+					padding: 10px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	.mainRightContainer, .mainCenterContainer {
+		
+		ul {
+			list-style: none;
+			padding-left: 0;
+		}
+	}
+
+	.dotDashContainer {
+		border: 1px dashed #649B3F;
+		background-color: #C5E0B4;
+	}
+}		

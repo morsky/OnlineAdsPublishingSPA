@@ -24,26 +24,67 @@ body footer {
   text-shadow: 2px 2px #CAE2BA;
 }
 body .imageSize {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 100%;
+  padding: 20px;
 }
 body .partContainer {
   border: 1px solid #507E32;
   background-color: #A9D18E;
-  box-shadow: 0 0 5px #BFCAB7;
+  box-shadow: 0 0 5px #507E32;
   padding: 15px 25px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
-body .partContainer p {
-  font-size: 1.6em;
+body .mainLeftContainer p {
+  font-size: 1.4em;
   text-align: center;
 }
-body .partContainer a {
+body .mainLeftContainer a {
   display: block;
   font-size: 1.4em;
   width: 80%;
   margin: 10px auto;
 }
-body .partContainer ul {
+body .mainRightContainer p {
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+}
+body .mainRightContainer hr {
+  border: none;
+  background-color: #507E32;
+  height: 1px;
+  box-shadow: 0 0 4px #507E32;
+  margin: 10px;
+}
+body .mainRightContainer ul li {
+  border: 1px solid #A9D18E;
+  font-size: 1.2em;
+  padding: 5px 20px;
+}
+body .mainRightContainer ul li:hover {
+  border: 1px solid #7F6000;
+  background-color: #DAA600;
+}
+body .mainCenterContainer ul li h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 10px;
+}
+body .mainCenterContainer ul li h2 span {
+  font-size: 0.7em;
+}
+body .mainCenterContainer ul li p {
+  text-align: justify;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+body .mainRightContainer ul,
+body .mainCenterContainer ul {
   list-style: none;
+  padding-left: 0;
+}
+body .dotDashContainer {
+  border: 1px dashed #649B3F;
+  background-color: #C5E0B4;
 }
