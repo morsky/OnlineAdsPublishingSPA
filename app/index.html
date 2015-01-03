@@ -7,24 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
-<body>
+<body ng-app="mySPAProject">
 	<header class="text-center">
 		<h1>Ads - home</h1>
 	</header>
 	
 	<main>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
-
-		<p>dsfdsfdsfdsdsfdsfdsa</p>
+		<div ng-view></div>
 	</main>
 
 	<footer>
@@ -36,5 +25,7 @@
 	<script type="text/javascript" src="lib/angular/angular.js"></script>
 	<script type="text/javascript" src="lib/angular/angular-route.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers/ShowAllAds.js"></script>
+	<script type="text/javascript" src="js/services/httpServices.js"></script>
 </body>
 </html>

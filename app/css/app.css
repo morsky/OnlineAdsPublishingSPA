@@ -2,10 +2,8 @@ body h1,
 body p {
   margin: 0;
 }
-body header {
+body h1 {
   border: 1px solid #507E32;
-}
-body header h1 {
   font-size: 1.8em;
   font-weight: bold;
   padding: 15px;
@@ -20,8 +18,32 @@ body footer p {
   font-size: 0.9em;
   padding: 10px;
 }
-body header,
+body h1,
 body footer {
   background-color: #A9D18E;
   text-shadow: 2px 2px #CAE2BA;
+}
+body .imageSize {
+  max-width: 150px;
+  max-height: 150px;
+}
+body .partContainer {
+  border: 1px solid #507E32;
+  background-color: #A9D18E;
+  box-shadow: 0 0 5px #BFCAB7;
+  padding: 15px 25px;
+  margin-top: 20px;
+}
+body .partContainer p {
+  font-size: 1.6em;
+  text-align: center;
+}
+body .partContainer a {
+  display: block;
+  font-size: 1.4em;
+  width: 80%;
+  margin: 10px auto;
+}
+body .partContainer ul {
+  list-style: none;
 }
