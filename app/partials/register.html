@@ -1,3 +1,43 @@
-<div>
-	Register form here!!
+<div ng-controller="RegisterController as ctrl" >	
+	<h1 class="text-center">Ads - {{ctrl.headerTitle}}</h1>	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="partContainer mainLeftContainer">
+					<p>To publish a new ad, please login.</p>
+					<a href="#/login" class="btn btn-success">Login</a>
+					<a href="#/register" class="btn btn-success">Register</a>
+				</div>
+			</div>
+			
+			<div class="col-md-9 mainCenterContainer">
+				<div ng-hide="allAds.data" class="alert alert-dismissable alert-danger">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+				</div>
+				
+				<form ng-submit="ctrl.submit()">
+					<label for="userName">Username:</label>
+					<input ng-model="ctrl.user.username" id="userName" type="text" />
+					<label for="passwod">Password:</label>
+					<input ng-model="ctrl.user.password" id="passwod" type="password" />
+					<label for="confirmPassword">Confirm password:</label>
+					<input ng-model="ctrl.user.confirmPassword" id="confirmPassword" type="password" />
+					<label for="name">Name:</label>
+					<input ng-model="ctrl.user.name" id="name" type="text" />
+					<label for="email">Email:</label>
+					<input ng-model="ctrl.user.email" id="email" type="text" />
+					<label for="phone">Phone:</label>
+					<input ng-model="ctrl.user.phone" id="phone" type="text" />
+					<label for="select"></label>
+					<select id="select" ng-model="ctrl.user.townId" ng-options="town.id as town.name for town in ctrl.towns">
+						<option value="">--Please select--</option>
+					</select>
+					<button type="submit">Register</button>
+					<a href="#/login">Login here</a>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>

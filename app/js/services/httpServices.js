@@ -1,7 +1,8 @@
-app.factory('serviceHandler', function($http, $log) {
+app.factory('serviceHandler', ['$http', '$log', function($http, $log) {
 	return {
 		getAllAds: function(success) {
-			$http({method: 'GET', url: 'http://softuni-ads.azurewebsites.net/api/ads'})
+			$http({method: 'GET',
+				url: 'http://softuni-ads.azurewebsites.net/api/ads'})
 			.success(function(data) {
 				success(data);
 			})
@@ -39,7 +40,8 @@ app.factory('serviceHandler', function($http, $log) {
 		},
 
 		getAllCategories: function(success) {
-			$http({method: 'GET', url: 'http://softuni-ads.azurewebsites.net/api/categories'})
+			$http({method: 'GET',
+				url: 'http://softuni-ads.azurewebsites.net/api/categories'})
 			.success(function(data, status, headers, config) {
 				success(data);
 			})
@@ -49,7 +51,8 @@ app.factory('serviceHandler', function($http, $log) {
 		},
 
 		getAllTowns: function(success) {
-			$http({method: 'GET', url: 'http://softuni-ads.azurewebsites.net/api/towns'})
+			$http({method: 'GET',
+				url: 'http://softuni-ads.azurewebsites.net/api/towns'})
 			.success(function(data, status, headers, config) {
 				success(data);
 			})
@@ -58,4 +61,4 @@ app.factory('serviceHandler', function($http, $log) {
 			})
 		}
 	}
-});
+}]);

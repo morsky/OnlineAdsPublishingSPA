@@ -3,6 +3,8 @@ app.controller('ListAds', ['$http', '$log', 'serviceHandler', function($http, $l
 
 	// self.name = 'Vlado';
 
+	self.headerTitle = 'Home';
+
 	serviceHandler.getAllAds(function(response) {
 		self.data = response;
 	});
@@ -18,19 +20,6 @@ app.controller('ListAds', ['$http', '$log', 'serviceHandler', function($http, $l
 	self.takeCategoryId = function(id) {
 		self.itemId = id;
 		console.log(self.itemId);
-
-		// $http({method: 'GET',
-		// 	url: 'http://softuni-ads.azurewebsites.net/api/ads',
-		// 	params: { 'categoryid': id }
-		// })
-		// .success(function(data) {
-		// 	// success(data);
-		// 	self.data = data;
-		// 	$log.log(data);
-		// })
-		// .error(function(data, status) {
-		// 	$log.warn(data);
-		// });
 
 		serviceHandler.getCategoryAds(id, function(response) {
 			self.data = response;

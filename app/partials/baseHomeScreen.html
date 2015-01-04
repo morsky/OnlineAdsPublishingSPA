@@ -1,69 +1,73 @@
-<div ng-controller="ListAds as allAds" class="container">
-	<div class="row">
-		<div class="col-md-3">
-			<div class="partContainer mainLeftContainer">
-				<p>To publish a new ad, please login.</p>
-				<a href="#/login" class="btn btn-success">Login</a>
-				<a href="#/register" class="btn btn-success">Register</a>
-			</div>
-		</div>
-		
-		<div class="col-md-6 mainCenterContainer">
-			<div ng-hide="allAds.data" class="alert alert-dismissable alert-danger">
-				<button type="button" class="close" data-dismiss="alert">×</button>
-				<strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+<div ng-controller="ListAds as allAds" >	
+	<h1 class="text-center">Ads - {{allAds.headerTitle}}</h1>	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="partContainer mainLeftContainer">
+					<p>To publish a new ad, please login.</p>
+					<a href="#/login" class="btn btn-success">Login</a>
+					<a href="#/register" class="btn btn-success">Register</a>
+				</div>
 			</div>
 			
-			<ul ng-show="allAds.data">
-				<li ng-repeat="ad in allAds.data.ads" class="partContainer">
-					<h2>
-						{{ad.title}}
-						<span class="pull-right">{{ad.date | date:'d-MM-yyyy'}}</span>
-					</h2>
+			<div class="col-md-6 mainCenterContainer">
+				<div ng-hide="allAds.data" class="alert alert-dismissable alert-danger">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+				</div>
+				
+				<ul ng-show="allAds.data">
+					<li ng-repeat="ad in allAds.data.ads" class="partContainer">
+						<h2>
+							{{ad.title}}
+							<span class="pull-right">{{ad.date | date:'d-MM-yyyy'}}</span>
+						</h2>
 
-					<div class="row">
-						<div class="col-md-5">
-							<img src="" ng-src="{{ad.imageDataUrl}}" class="imageSize dotDashContainer">
-						</div>
-						<div class="col-md-7">
-							<p class="dotDashContainer">{{ad.text}}</p>
+						<div class="row">
+							<div class="col-md-5">
+								<img src="" ng-src="{{ad.imageDataUrl}}" class="imageSize dotDashContainer">
+							</div>
+							<div class="col-md-7">
+								<p class="dotDashContainer">{{ad.text}}</p>
 
-							<div class="row">
-								<div class="col-md-3">
-									<p class="pull-right">Name</p>
-									<p class="pull-right">Email</p>
-									<p class="pull-right">Tel.</p>
-								</div>
-								<div class="col-md-9">
-									<p class="dotDashContainer">{{ad.ownerName}}</p>
-									<p class="dotDashContainer">{{ad.ownerEmail}}</p>
-									<p class="dotDashContainer">{{ad.ownerPhone}}</p>
+								<div class="row">
+									<div class="col-md-3">
+										<p class="pull-right">Name</p>
+										<p class="pull-right">Email</p>
+										<p class="pull-right">Tel.</p>
+									</div>
+									<div class="col-md-9">
+										<p class="dotDashContainer">{{ad.ownerName}}</p>
+										<p class="dotDashContainer">{{ad.ownerEmail}}</p>
+										<p class="dotDashContainer">{{ad.ownerPhone}}</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>				
-				</li>
-			</ul>
-		</div>
-		
-		<div class="col-md-3">
-			<div class="partContainer mainRightContainer">
-				<p>Categories:</p>
-				<hr />
-				<ul>
-					<li ng-click="allAds.takeCategoryId('')">All</li>
-					<li ng-repeat="category in allAds.categories" ng-click="allAds.takeCategoryId(category.id)" id="{{category.id}}">{{category.name}}</li>
+						</div>				
+					</li>
 				</ul>
-				ID: {{allAds.itemId}}
 			</div>
 			
-			<div class="partContainer mainRightContainer">
-				<p>Towns:</p>
-				<hr />
-				<ul>
-					<li ng-click="allAds.takeTownId('')">All</li>
-					<li ng-repeat="town in allAds.towns" ng-click="allAds.takeTownId(town.id)" id="{{town.id}}">{{town.name}}</li>
-				</ul>
+			<div class="col-md-3">
+				<div class="partContainer mainRightContainer">
+					<p>Categories:</p>
+					<hr />
+					<ul>
+						<li ng-click="allAds.takeCategoryId('')">All</li>
+						<li ng-repeat="category in allAds.categories" ng-click="allAds.takeCategoryId(category.id)" id="{{category.id}}">{{category.name}}</li>
+					</ul>
+					ID: {{allAds.itemId}}
+				</div>
+				
+				<div class="partContainer mainRightContainer">
+					<p>Towns:</p>
+					<hr />
+					<ul>
+						<li ng-click="allAds.takeTownId('')">All</li>
+						<li ng-repeat="town in allAds.towns" ng-click="allAds.takeTownId(town.id)" id="{{town.id}}">{{town.name}}</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
