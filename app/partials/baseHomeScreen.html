@@ -51,17 +51,18 @@
 				<p>Categories:</p>
 				<hr />
 				<ul>
-					<li>All</li>
-					<li ng-repeat="category in allAds.categories" id="{{category.id}}">{{category.name}}</li>
+					<li ng-click="allAds.takeCategoryId('')">All</li>
+					<li ng-repeat="category in allAds.categories" ng-click="allAds.takeCategoryId(category.id)" id="{{category.id}}">{{category.name}}</li>
 				</ul>
+				ID: {{allAds.itemId}}
 			</div>
 			
 			<div class="partContainer mainRightContainer">
 				<p>Towns:</p>
 				<hr />
 				<ul>
-					<li>All</li>
-					<li ng-repeat="town in allAds.towns" id="{{town.id}}">{{town.name}}</li>
+					<li ng-click="allAds.takeTownId('')">All</li>
+					<li ng-repeat="town in allAds.towns" ng-click="allAds.takeTownId(town.id)" id="{{town.id}}">{{town.name}}</li>
 				</ul>
 			</div>
 		</div>
