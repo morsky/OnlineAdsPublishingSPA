@@ -43,7 +43,7 @@ body {
 		margin-bottom: 20px;
 	}
 
-	.mainLeftContainer {
+	.asideForm {
 
 		p {
 			font-size: 1.4em;
@@ -58,8 +58,7 @@ body {
 		}
 	}
 
-	.mainRightContainer {
-
+	.asideContainer {
 		p {
 			font-size: 1.6em;
 			font-weight: bold;
@@ -75,15 +74,27 @@ body {
 		}
 		
 		ul {
+			list-style: none;
 
 			li {
 				border: 1px solid #A9D18E;
 				font-size: 1.2em;
-				padding: 5px 20px;
 
 				&:hover {
 					border: 1px solid #7F6000;
 					background-color: #DAA600;
+				}
+
+				a {
+					color: #2C3E50;
+					text-decoration: none;
+					width: 100%;
+				}
+
+				a, span {
+					display: block;
+					padding: 5px 20px;
+					width:100%;
 				}
 			}
 		}
@@ -114,7 +125,7 @@ body {
 		}
 	}
 
-	.mainRightContainer, .mainCenterContainer {
+	.mainCenterContainer, .asideContainer {
 		
 		ul {
 			list-style: none;

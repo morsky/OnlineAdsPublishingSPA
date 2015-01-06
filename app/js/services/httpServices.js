@@ -1,19 +1,23 @@
-app.factory('serviceHandler', ['$http', '$log', function($http, $log) {
+app.factory('serviceHandler', ['$http', '$log', 'baseUrl', function($http, $log, baseUrl) {
 	return {
 		getAllAds: function(success) {
-			$http({method: 'GET',
-				url: 'http://softuni-ads.azurewebsites.net/api/ads'})
+			$http({
+				method: 'GET',
+				url: baseUrl + 'ads'
+			})
 			.success(function(data) {
 				success(data);
 			})
 			.error(function(data, status) {
 				$log.warn(data);
+				alert('Error reading DB!!!');
 			})
 		},
 
 		getCategoryAds: function(category, success) {
-			$http({method: 'GET',
-				url: 'http://softuni-ads.azurewebsites.net/api/ads',
+			$http({
+				method: 'GET',
+				url: baseUrl + 'ads',
 				params: { 'categoryid': category }
 			})
 			.success(function(data) {
@@ -26,8 +30,9 @@ app.factory('serviceHandler', ['$http', '$log', function($http, $log) {
 		},
 
 		getTownAds: function(town, success) {
-			$http({method: 'GET',
-				url: 'http://softuni-ads.azurewebsites.net/api/ads',
+			$http({
+				method: 'GET',
+				url: baseUrl + 'ads',
 				params: { 'townid': town }
 			})
 			.success(function(data) {
@@ -40,8 +45,10 @@ app.factory('serviceHandler', ['$http', '$log', function($http, $log) {
 		},
 
 		getAllCategories: function(success) {
-			$http({method: 'GET',
-				url: 'http://softuni-ads.azurewebsites.net/api/categories'})
+			$http({
+				method: 'GET',
+				url: baseUrl + 'categories'
+			})
 			.success(function(data, status, headers, config) {
 				success(data);
 			})
@@ -51,8 +58,10 @@ app.factory('serviceHandler', ['$http', '$log', function($http, $log) {
 		},
 
 		getAllTowns: function(success) {
-			$http({method: 'GET',
-				url: 'http://softuni-ads.azurewebsites.net/api/towns'})
+			$http({
+				method: 'GET',
+				url: baseUrl + 'towns'
+			})
 			.success(function(data, status, headers, config) {
 				success(data);
 			})

@@ -1,0 +1,10 @@
+<div>
+	<div class="partContainer asideContainer">
+		<p>Towns:</p>
+		<hr />
+		<ul>
+			<li ng-click="allAds.takeTownId('')"><span>All</span></li>
+			<li ng-repeat="town in allAds.towns" ng-click="allAds.takeTownId(town.id)" id="{{town.id}}"><span>{{town.name}}</span></li>
+		</ul>
+	</div>
+</div>

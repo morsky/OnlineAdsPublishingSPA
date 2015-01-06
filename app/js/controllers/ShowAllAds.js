@@ -1,12 +1,14 @@
-app.controller('ListAds', ['$http', '$log', 'serviceHandler', function($http, $log, serviceHandler) {
+app.controller('ListAds', ['$log', 'serviceHandler', function($log, serviceHandler) {
 	var self = this;
 
 	// self.name = 'Vlado';
 
 	self.headerTitle = 'Home';
+	self.adsLoaded = false;
 
 	serviceHandler.getAllAds(function(response) {
 		self.data = response;
+		self.adsLoaded = true;	
 	});
 
 	serviceHandler.getAllCategories(function(response) {

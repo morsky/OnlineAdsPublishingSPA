@@ -35,36 +35,49 @@ body .partContainer {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-body .mainLeftContainer p {
+body .asideForm p {
   font-size: 1.4em;
   text-align: center;
 }
-body .mainLeftContainer a {
+body .asideForm a {
   display: block;
   font-size: 1.4em;
   width: 80%;
   margin: 10px auto;
 }
-body .mainRightContainer p {
+body .asideContainer p {
   font-size: 1.6em;
   font-weight: bold;
   text-align: center;
 }
-body .mainRightContainer hr {
+body .asideContainer hr {
   border: none;
   background-color: #507E32;
   height: 1px;
   box-shadow: 0 0 4px #507E32;
   margin: 10px;
 }
-body .mainRightContainer ul li {
+body .asideContainer ul {
+  list-style: none;
+}
+body .asideContainer ul li {
   border: 1px solid #A9D18E;
   font-size: 1.2em;
-  padding: 5px 20px;
 }
-body .mainRightContainer ul li:hover {
+body .asideContainer ul li:hover {
   border: 1px solid #7F6000;
   background-color: #DAA600;
+}
+body .asideContainer ul li a {
+  color: #2C3E50;
+  text-decoration: none;
+  width: 100%;
+}
+body .asideContainer ul li a,
+body .asideContainer ul li span {
+  display: block;
+  padding: 5px 20px;
+  width: 100%;
 }
 body .mainCenterContainer ul li h2 {
   font-size: 1.6em;
@@ -79,8 +92,8 @@ body .mainCenterContainer ul li p {
   padding: 10px;
   margin-bottom: 10px;
 }
-body .mainRightContainer ul,
-body .mainCenterContainer ul {
+body .mainCenterContainer ul,
+body .asideContainer ul {
   list-style: none;
   padding-left: 0;
 }
