@@ -1,6 +1,6 @@
 app.directive('categories', [function() {
 	return {
-		controller: 'ListAds as allAds',
+		controller: 'ListAds',
 		restrict: 'E',
 		templateUrl: 'partials/public/categories-sidebar.html',
 		replace: true,

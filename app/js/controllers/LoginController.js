@@ -1,14 +1,12 @@
-app.controller('LoginController', ['$http', '$log', function($http, $log) {
-	var self = this;
+app.controller('LoginController', ['$scope', '$http', '$log', function($scope, $http, $log) {
+	$scope.headerTitle = 'Login';
 
-	self.headerTitle = 'Login';
-
-	self.submit = function() {
-		console.log(self.user);
+	$scope.submit = function() {
+		console.log($scope.user);
 
 		$http({method: 'POST',
 			url: 'http://softuni-ads.azurewebsites.net/api/user/login',
-			data: self.user
+			data: $scope.user
 		})
 		.success(function(data) {
 			$log.log(data);

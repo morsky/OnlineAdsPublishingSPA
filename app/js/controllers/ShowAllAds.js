@@ -1,39 +1,38 @@
-app.controller('ListAds', ['$log', 'serviceHandler', function($log, serviceHandler) {
-	var self = this;
-
-	// self.name = 'Vlado';
-
-	self.headerTitle = 'Home';
-	self.adsLoaded = false;
+app.controller('ListAds', ['$scope', '$log', 'serviceHandler', function($scope, $log, serviceHandler) {
+	$scope.headerTitle = 'Home';
+	$scope.adsLoaded = false;
 
 	serviceHandler.getAllAds(function(response) {
-		self.data = response;
-		self.adsLoaded = true;	
+		$scope.data = response;
+		$scope.adsLoaded = true;	
 	});
 
 	serviceHandler.getAllCategories(function(response) {
-		self.categories = response;
+		$scope.categories = response;
 	});
 
 	serviceHandler.getAllTowns(function(response) {
-		self.towns = response;
+		$scope.towns = response;
+		// $scope.towns = townsService.getTowns();
 	});
+	
+	// $scope.towns = townsService.getTowns();
 
-	self.takeCategoryId = function(id) {
-		self.itemId = id;
+	$scope.takeCategoryId = function(id) {
+		$scope.itemId = id;
 		console.log(self.itemId);
 
 		serviceHandler.getCategoryAds(id, function(response) {
-			self.data = response;
+			$scope.data = response;
 		});
 	};
 
-	self.takeTownId = function(id) {
-		self.itemId = id;
-		console.log(self.itemId);
+	$scope.takeTownId = function(id) {
+		$scope.itemId = id;
+		console.log($scope.itemId);
 
 		serviceHandler.getTownAds(id, function(response) {
-			self.data = response;
+			$scope.data = response;
 		});
 	};
 }]);

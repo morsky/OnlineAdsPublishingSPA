@@ -1,4 +1,5 @@
-app.factory('serviceHandler', ['$http', '$log', 'baseUrl', function($http, $log, baseUrl) {
+app.factory('serviceHandler', ['$http', '$log', '$resource', 'baseUrl', function($http, $log, $resource, baseUrl) {
+	var count = 0;
 	return {
 		getAllAds: function(success) {
 			$http({
@@ -64,6 +65,8 @@ app.factory('serviceHandler', ['$http', '$log', 'baseUrl', function($http, $log,
 			})
 			.success(function(data, status, headers, config) {
 				success(data);
+				alert('repeat ' + count);
+				count += 1;
 			})
 			.error(function(data, status, headers, config) {
 				$log.warn(data);

@@ -1,5 +1,3 @@
-app.controller('HomeController', [function () {
-	var self = this;
-
-	self.headerTitle = 'Home';
+app.controller('HomeController', ['$scope', function ($scope) {
+	$scope.headerTitle = 'Home';
 }]);

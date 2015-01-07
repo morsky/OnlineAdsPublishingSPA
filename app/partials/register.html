@@ -3,28 +3,11 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
-				<div class="partContainer asideContainer">
-					<p>Navigation</p>
-					<hr />
-					<ul>
-						<li><a href="#/">Home</a></li>
-					</ul>
-				</div>
-
-				<div class="partContainer asideForm">
-					<p>To publish a new ad, please login.</p>
-					<a href="#/login" class="btn btn-success">Login</a>
-					<a href="#/register" class="btn btn-success">Register</a>
-				</div>
+			<div class="col-md-2">
+				<left-public-sidebar></left-public-sidebar>
 			</div>
 			
-			<div class="col-md-9 mainCenterContainer">
-				<!-- <div ng-hide="allAds.data" class="alert alert-dismissable alert-danger">
-					<button type="button" class="close" data-dismiss="alert">×</button>
-					<strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-				</div> -->
-				
+			<div class="col-md-10 mainCenterContainer">				
 				<form ng-submit="ctrl.submit()">
 					<label for="userName">Username:</label>
 					<input ng-model="ctrl.user.username" id="userName" type="text" />

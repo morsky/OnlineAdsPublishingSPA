@@ -3,8 +3,8 @@
 		<p>Categories:</p>
 		<hr />
 		<ul>
-			<li ng-click="allAds.takeCategoryId('')"><span>All</span></li>
-			<li ng-repeat="category in allAds.categories" ng-click="allAds.takeCategoryId(category.id)" id="{{category.id}}"><span>{{category.name}}</span></li>
+			<li ng-click="takeCategoryId('')"><span>All</span></li>
+			<li ng-repeat="category in categories" ng-click="takeCategoryId(category.id)" id="{{category.id}}"><span>{{category.name}}</span></li>
 		</ul>
 	</div>
 </div>

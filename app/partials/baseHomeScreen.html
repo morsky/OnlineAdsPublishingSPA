@@ -1,21 +1,17 @@
-<div ng-controller="ListAds as allAds" >	
-	<h1 class="text-center">Ads - {{allAds.headerTitle}}</h1>	
+<div ng-controller="ListAds">	
+	<h1 class="text-center">Ads - {{headerTitle}}</h1>
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<left-public-sidebar></left-public-sidebar>
 			</div>
 			
-			<div class="col-md-6 mainCenterContainer">
-				<img class="center" src="img/loading.gif" alt="loading.gif" ng-hide="allAds.adsLoaded">
-				<!-- <div ng-hide="allAds.dbError" class="alert alert-dismissable alert-danger">
-					<button type="button" class="close" data-dismiss="alert">×</button>
-					<strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-				</div> -->
+			<div class="col-md-8 mainCenterContainer">
+				<img class="center" src="img/loading.gif" alt="loading.gif" ng-hide="adsLoaded">
 				
-				<ul ng-show="allAds.data">
-					<li ng-repeat="ad in allAds.data.ads" class="partContainer">
+				<ul ng-show="data">
+					<li ng-repeat="ad in data.ads" class="partContainer">
 						<h2>
 							{{ad.title}}
 							<span class="pull-right">{{ad.date | date:'d-MM-yyyy'}}</span>
@@ -46,7 +42,7 @@
 				</ul>
 			</div>
 			
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<categories></categories>
 				<towns></towns>
 			</div>

@@ -1,6 +1,6 @@
 app.directive('towns', [function() {
 	return {
-		controller: 'ListAds as allAds',
+		controller: 'ListAds',
 		restrict: 'E',
 		templateUrl: 'partials/public/towns-sidebar.html',
 		replace: true,
