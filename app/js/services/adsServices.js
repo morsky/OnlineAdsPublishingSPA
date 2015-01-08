@@ -34,10 +34,11 @@
 
 app.factory('adsServices', ['$http', 'baseUrl', function($http, baseUrl) {
 	return {
-		getAds: function(success) {
+		getAds: function(category, town, success) {
 			$http({
 				method: 'GET',
-				url: baseUrl + 'ads'
+				url: baseUrl + 'ads',
+				params: { 'categoryid': category, 'townid': town },
 			})
 			.success(function(data) {
 				success(data);
@@ -47,36 +48,6 @@ app.factory('adsServices', ['$http', 'baseUrl', function($http, baseUrl) {
 				alert('Error reading DB!!!');
 			})
 		},
-
-		// getCategoryAds: function(category, success) {
-		// 	$http({
-		// 		method: 'GET',
-		// 		url: baseUrl + 'ads',
-		// 		params: { 'categoryid': category }
-		// 	})
-		// 	.success(function(data) {
-		// 		success(data);
-		// 		$log.log(data);
-		// 	})
-		// 	.error(function(data, status) {
-		// 		$log.warn(data);
-		// 	})
-		// },
-
-		// getTownAds: function(town, success) {
-		// 	$http({
-		// 		method: 'GET',
-		// 		url: baseUrl + 'ads',
-		// 		params: { 'townid': town }
-		// 	})
-		// 	.success(function(data) {
-		// 		success(data);
-		// 		$log.log(data);
-		// 	})
-		// 	.error(function(data, status) {
-		// 		$log.warn(data);
-		// 	})
-		// },
 
 		getCategories: function(success) {
 			$http({

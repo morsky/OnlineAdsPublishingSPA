@@ -1,20 +1,21 @@
 app.controller('LoginController', ['$scope', '$location', 'authServices', 'notifyServices',
 	function($scope, $location, authServices, notifyServices) {
 	
-	$scope.headerTitle = 'Login';
+		$scope.headerTitle = 'Login';
 
-	$scope.submit = function(userData) {
-		var userData = $scope.user;
-		console.log(userData);
+		$scope.submit = function(userData) {
+			var userData = $scope.user;
+			console.log(userData);
 
-		authServices.login(userData,
-			function success() {
-				notifyServices.showSuccess('Login successfull');
-				$location.path('/');
-			},
-			function error(err) {
-				notifyServices.showError('Login failed!!', err);
-			}
-		);
+			authServices.login(userData,
+				function success() {
+					notifyServices.showSuccess('Login successfull');
+					$location.path('/');
+				},
+				function error(err) {
+					notifyServices.showError('Login failed!!', err);
+				}
+			);
+		}
 	}
-}]);
+]);

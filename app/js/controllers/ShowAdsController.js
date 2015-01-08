@@ -1,37 +1,42 @@
-app.controller('ShowAdsController', ['$scope', '$log', 'adsServices',
-	function($scope, $log, adsServices) {
+app.controller('ShowAdsController', ['$scope', 'adsServices',
+	function($scope, adsServices) {
+		var category = '',
+			town = '';
 	
-	$scope.headerTitle = 'Home';
-	$scope.adsLoaded = false;
+		$scope.headerTitle = 'Home';
+		$scope.adsLoaded = false;
 
-	adsServices.getAds(function(response) {
-		$scope.data = response;
-		$scope.adsLoaded = true;	
-	});
+		adsServices.getCategories(function(response) {
+			$scope.categories = response;
+		});
 
-	adsServices.getCategories(function(response) {
-		$scope.categories = response;
-	});
+		adsServices.getTowns(function(response) {
+			$scope.towns = response;
+		});
 
-	adsServices.getTowns(function(response) {
-		$scope.towns = response;
-	});
+		function loadAds(category, town) {
+			adsServices.getAds(category, town, function(response) {
+				$scope.data = response;
+				$scope.adsLoaded = true;	
+			});
+		};
 
-	// $scope.takeCategoryId = function(id) {
-	// 	$scope.itemId = id;
-	// 	console.log(self.itemId);
+		loadAds(category, town);
 
-	// 	adsServices.getCategoryAds(id, function(response) {
-	// 		$scope.data = response;
-	// 	});
-	// };
+		$scope.takeCategoryId = function(id) {
+			category = id;
+			// console.log('category: ' + category);
 
-	// $scope.takeTownId = function(id) {
-	// 	$scope.itemId = id;
-	// 	console.log($scope.itemId);
+			loadAds(category, town);
+		};
 
-	// 	adsServices.getTownAds(id, function(response) {
-	// 		$scope.data = response;
-	// 	});
-	// };
-}]);
+		$scope.takeTownId = function(id) {
+			console.log($scope.itemId);
+
+			town = id;
+			// console.log('town: ' + town);
+
+			loadAds(category, town);
+		};
+	}
+]);
