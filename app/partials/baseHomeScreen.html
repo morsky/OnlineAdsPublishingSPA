@@ -1,4 +1,4 @@
-<div ng-controller="ListAds">	
+<div ng-controller="ShowAdsController">	
 	<h1 class="text-center">Ads - {{headerTitle}}</h1>
 	
 	<div class="container">
@@ -8,38 +8,7 @@
 			</div>
 			
 			<div class="col-md-8 mainCenterContainer">
-				<img class="center" src="img/loading.gif" alt="loading.gif" ng-hide="adsLoaded">
-				
-				<ul ng-show="data">
-					<li ng-repeat="ad in data.ads" class="partContainer">
-						<h2>
-							{{ad.title}}
-							<span class="pull-right">{{ad.date | date:'d-MM-yyyy'}}</span>
-						</h2>
-
-						<div class="row">
-							<div class="col-md-5">
-								<img src="" ng-src="{{ad.imageDataUrl}}" class="imageSize dotDashContainer">
-							</div>
-							<div class="col-md-7">
-								<p class="dotDashContainer">{{ad.text}}</p>
-
-								<div class="row">
-									<div class="col-md-3">
-										<p class="pull-right">Name</p>
-										<p class="pull-right">Email</p>
-										<p class="pull-right">Tel.</p>
-									</div>
-									<div class="col-md-9">
-										<p class="dotDashContainer">{{ad.ownerName}}</p>
-										<p class="dotDashContainer">{{ad.ownerEmail}}</p>
-										<p class="dotDashContainer">{{ad.ownerPhone}}</p>
-									</div>
-								</div>
-							</div>
-						</div>				
-					</li>
-				</ul>
+				<show-ads></show-ads>
 			</div>
 			
 			<div class="col-md-2">

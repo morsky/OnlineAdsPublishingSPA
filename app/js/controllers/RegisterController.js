@@ -1,23 +1,23 @@
-app.controller('RegisterController', ['$scope', '$http', '$log', 'serviceHandler', function($scope, $http, $log, serviceHandler) {
-	$scope.headerTitle = 'Registration';
-
-	serviceHandler.getAllTowns(function(response) {
+app.controller('RegisterController', ['$scope', '$location', 'authServices', 'notifyServices', 'adsServices',
+	function($scope, $location, authServices, notifyServices, adsServices) {
+	
+	$scope.headerTitle = 'Register';
+	adsServices.getTowns(function(response) {
 		$scope.towns = response;
 	});
 
-	$scope.submit = function() {
-		$log.log($scope.user);
+	$scope.submit = function(userData) {
+		var userData = $scope.user;
+		console.log(userData);
 
-		$http({method: 'POST',
-			url: 'http://softuni-ads.azurewebsites.net/api/user/register',
-			data: $scope.user
-		})
-		.success(function(data) {
-			$log.log(data);
-			sessionStorage.setItem('userTolken', data.access_token);
-		})
-		.error(function(data, status) {
-			$log.warn(data);
-		})
+		authServices.register(userData,
+			function success() {
+				notifyServices.showSuccess('Registration successfull');
+				$location.path('/login');
+			},
+			function error(err) {
+				notifyServices.showError('Registration failed!!', err);
+			}
+		);
 	}
 }]);

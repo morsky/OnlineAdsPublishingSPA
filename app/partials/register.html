@@ -1,5 +1,5 @@
-<div ng-controller="RegisterController as ctrl" >	
-	<h1 class="text-center">Ads - {{ctrl.headerTitle}}</h1>	
+<div ng-controller="RegisterController" >	
+	<h1 class="text-center">Ads - {{headerTitle}}</h1>	
 	
 	<div class="container">
 		<div class="row">
@@ -8,21 +8,21 @@
 			</div>
 			
 			<div class="col-md-10 mainCenterContainer">				
-				<form ng-submit="ctrl.submit()">
+				<form ng-submit="submit()">
 					<label for="userName">Username:</label>
-					<input ng-model="ctrl.user.username" id="userName" type="text" />
+					<input ng-model="user.username" id="userName" type="text" />
 					<label for="passwod">Password:</label>
-					<input ng-model="ctrl.user.password" id="passwod" type="password" />
+					<input ng-model="user.password" id="passwod" type="password" />
 					<label for="confirmPassword">Confirm password:</label>
-					<input ng-model="ctrl.user.confirmPassword" id="confirmPassword" type="password" />
+					<input ng-model="user.confirmPassword" id="confirmPassword" type="password" />
 					<label for="name">Name:</label>
-					<input ng-model="ctrl.user.name" id="name" type="text" />
+					<input ng-model="user.name" id="name" type="text" />
 					<label for="email">Email:</label>
-					<input ng-model="ctrl.user.email" id="email" type="text" />
+					<input ng-model="user.email" id="email" type="text" />
 					<label for="phone">Phone:</label>
-					<input ng-model="ctrl.user.phone" id="phone" type="text" />
+					<input ng-model="user.phone" id="phone" type="text" />
 					<label for="select"></label>
-					<select id="select" ng-model="ctrl.user.townId" ng-options="town.id as town.name for town in ctrl.towns">
+					<select id="select" ng-model="user.townId" ng-options="town.id as town.name for town in towns">
 						<option value="">-- Please select --</option>
 					</select>
 
