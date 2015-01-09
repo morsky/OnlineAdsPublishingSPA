@@ -3,8 +3,15 @@
 		<p>Towns:</p>
 		<hr />
 		<ul>
-			<li ng-click="takeTownId('')"><span>All</span></li>
-			<li ng-repeat="town in towns" ng-click="takeTownId(town.id)"><span>{{town.name}}</span></li>
+			<li ng-click="takeTownId(town.id)"
+				ng-class="{'active-selection': town.id == activeClassTown}">
+				<span>All</span>
+			</li>
+			<li ng-repeat="town in towns" 
+				ng-click="takeTownId(town.id)" 
+				ng-class="{'active-selection': town.id == activeClassTown}">
+				<span>{{town.name}}</span>
+			</li>
 		</ul>
 	</div>
 </div>

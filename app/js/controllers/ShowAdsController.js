@@ -4,7 +4,25 @@ app.controller('ShowAdsController', ['$scope', 'adsServices',
 			town = '';
 	
 		$scope.headerTitle = 'Home';
-		$scope.adsLoaded = false;
+		$scope.adsLoaded = false;		
+
+		loadAds(category, town);
+
+		$scope.takeCategoryId = function(id) {
+			category = id;
+			// console.log('category: ' + category + 'town:' + town);
+			loadAds(category, town);
+
+			$scope.activeClassCategory = id;
+		};
+
+		$scope.takeTownId = function(id) {
+			town = id;
+			// console.log('category: ' + category + 'town:' + town);
+			loadAds(category, town);
+
+			$scope.activeClassTown = id;
+		};
 
 		adsServices.getCategories(function(response) {
 			$scope.categories = response;
@@ -19,24 +37,6 @@ app.controller('ShowAdsController', ['$scope', 'adsServices',
 				$scope.data = response;
 				$scope.adsLoaded = true;	
 			});
-		};
-
-		loadAds(category, town);
-
-		$scope.takeCategoryId = function(id) {
-			category = id;
-			// console.log('category: ' + category);
-
-			loadAds(category, town);
-		};
-
-		$scope.takeTownId = function(id) {
-			console.log($scope.itemId);
-
-			town = id;
-			// console.log('town: ' + town);
-
-			loadAds(category, town);
 		};
 	}
 ]);

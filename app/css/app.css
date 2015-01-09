@@ -76,8 +76,7 @@ body .asideContainer ul li {
   margin: 0 10px;
 }
 body .asideContainer ul li:hover {
-  border: 1px solid #7F6000;
-  background-color: #DAA600;
+  background-color: #C5E0B4;
 }
 body .asideContainer ul li a {
   color: #2C3E50;
@@ -89,6 +88,10 @@ body .asideContainer ul li span {
   display: block;
   padding: 5px;
   width: 100%;
+}
+body .asideContainer ul .active-selection {
+  border: 1px solid #7F6000;
+  background-color: #DAA600;
 }
 body .mainCenterContainer ul li h2 {
   font-size: 1.6em;
