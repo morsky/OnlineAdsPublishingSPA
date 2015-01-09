@@ -1,5 +1,5 @@
-app.controller('ShowAdsController', ['$scope', 'adsServices', 'notifyServices', 'pageSize',
-	function($scope, adsServices, notifyServices, pageSize) {	
+app.controller('ShowAdsController', ['$scope', 'adsServices', 'pageSize',
+	function($scope, adsServices, pageSize) {	
 		$scope.headerTitle = 'Home';
 		$scope.adsLoaded = false;
 
@@ -13,6 +13,7 @@ app.controller('ShowAdsController', ['$scope', 'adsServices', 'notifyServices', 
 		loadAds();
 
 		$scope.loadAds = function() {
+			$scope.adsLoaded = false;
 			loadAds();
 		};
 
@@ -20,6 +21,7 @@ app.controller('ShowAdsController', ['$scope', 'adsServices', 'notifyServices', 
 			$scope.adsParams.categoryId = id;
 			$scope.adsParams.startPage = 1;
 			// console.log('category: ' + category + 'town:' + town);
+			$scope.adsLoaded = false;
 			loadAds();
 
 			$scope.activeClassCategory = id;
@@ -28,6 +30,7 @@ app.controller('ShowAdsController', ['$scope', 'adsServices', 'notifyServices', 
 		$scope.takeTownId = function(id) {
 			$scope.adsParams.townId = id;
 			$scope.adsParams.startPage = 1;
+			$scope.adsLoaded = false;
 			// console.log('category: ' + category + 'town:' + town);
 			loadAds();
 

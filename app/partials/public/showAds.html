@@ -1,13 +1,13 @@
 <div>
 	<img class="center" src="img/loading.gif" alt="loading.gif" ng-hide="adsLoaded">
 				
-	<ul ng-show="data">
+	<ul ng-show="adsLoaded">
 		<pagination total-items="data.numItems"
 			ng-model="adsParams.startPage"
 			items-per-page="adsParams.pageSize"
 			ng-change="loadAds()"
 			max-size="9"
-			boundary-links="true">
+			boundary-links="true" class="row">
 		</pagination>
 
 		<li ng-repeat="ad in data.ads" class="partContainer">
@@ -44,7 +44,7 @@
 			items-per-page="adsParams.pageSize"
 			ng-change="loadAds()"
 			max-size="9"
-			boundary-links="true" class="paginationStule">
+			boundary-links="true">
 		</pagination>
 	</ul>
 </div>

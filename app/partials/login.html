@@ -7,14 +7,18 @@
 				<left-public-sidebar></left-public-sidebar>
 			</div>
 			
-			<div class="col-md-10 mainCenterContainer">				
+			<div class="col-md-offset-2 col-md-6 mainCenterContainer partContainer formShape loginForm">
+				<h2>{{headerTitle}}</h2>
+
+				<hr />
+
 				<form ng-submit="submit()">
 					<label for="userName">Username:</label>
 					<input ng-model="user.username" id="userName" type="text" />
 					<label for="userPasswod">Password:</label>
 					<input ng-model="user.password" id="userPasswod" type="password" />
 					<button type="submit">Login</button>
-					<a href="#/register">Register here</a>
+					<a href="#/register" class="pull-right">Register here</a>
 				</form>
 			</div>
 		</div>

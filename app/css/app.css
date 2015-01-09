@@ -27,7 +27,8 @@ body .imageSize {
   max-width: 100%;
   padding: 20px;
 }
-body .partContainer {
+body .partContainer,
+body .formShape {
   border: 1px solid #507E32;
   background-color: #A9D18E;
   box-shadow: 0 0 5px #507E32;
@@ -119,4 +120,74 @@ body .dotDashContainer {
 body .lineText {
   border: 1px dashed #A9D18E;
   margin-bottom: 10px;
+}
+body .formShape {
+  border-radius: 10px;
+}
+body .formShape h2 {
+  font-weight: bold;
+  text-align: center;
+}
+body .formShape hr {
+  border: none;
+  background-color: #507E32;
+  height: 1px;
+  box-shadow: 0 0 4px #507E32;
+  margin: 10px;
+}
+body .formShape label,
+body .formShape input {
+  display: block;
+}
+body .formShape button {
+  border: 1px solid #61973D;
+  border-radius: 5px;
+  background-color: #70AD47;
+  color: #FFF;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: -1px 1px #61973d;
+  width: 80%;
+  padding: 10px 15px;
+  margin: 10px auto;
+}
+body .formShape button:hover {
+  text-decoration: none;
+}
+body .loginForm,
+body .registerForm {
+  font-size: 1.2em;
+  padding: 10px 25px;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+body .loginForm label,
+body .registerForm label {
+  margin: 20px;
+}
+body .loginForm input,
+body .registerForm input {
+  width: 90%;
+  padding: 5px 10px;
+  margin: 0 auto 20px;
+}
+body .loginForm button,
+body .registerForm button {
+  width: 30%;
+  margin-left: 20px;
+}
+body .loginForm a,
+body .registerForm a {
+  color: #2E75B6;
+  position: relative;
+  top: 20px;
+  right: 20px;
+}
+body .registerForm select {
+  width: 90%;
+  margin-right: 20px;
+}
+body .registerForm select option {
+  padding: 5px 10px;
 }

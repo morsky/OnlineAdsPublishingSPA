@@ -32,7 +32,7 @@
 // 	}
 // }]);
 
-app.factory('adsServices', ['$http', 'baseUrl', function($http, baseUrl) {
+app.factory('adsServices', ['$http', 'baseUrl', 'notifyServices', function($http, baseUrl, notifyServices) {
 	return {
 		getAds: function(params, success) {
 			$http({
@@ -43,9 +43,9 @@ app.factory('adsServices', ['$http', 'baseUrl', function($http, baseUrl) {
 			.success(function(data) {
 				success(data);
 			})
-			.error(function(data) {
-				console.log(data);
-				alert('Error reading DB!!!');
+			.error(function(err) {
+				console.log(err);
+				notifyServices.showError('Error reading DataBese!!')
 			})
 		},
 

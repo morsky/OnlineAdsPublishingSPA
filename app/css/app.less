@@ -34,7 +34,7 @@ body {
 		padding: 20px;
 	}
 
-	.partContainer {
+	.partContainer, .formShape {
 		border: 1px solid #507E32;
 		background-color: #A9D18E;
 		box-shadow: 0 0 5px #507E32;
@@ -158,5 +158,85 @@ body {
 	.lineText {
 		border: 1px dashed #A9D18E;
 		margin-bottom: 10px;
+	}
+	
+	.formShape {
+		border-radius: 10px;
+
+		h2 {
+			font-weight: bold;
+			text-align: center;
+		}
+
+		hr {
+			border: none;
+			background-color: #507E32;
+			height: 1px;
+			box-shadow: 0 0 4px #507E32;
+			margin: 10px;
+		}
+
+		label, input {
+			display: block;
+		}
+
+		button {
+			border: 1px solid #61973D;
+			border-radius: 5px;
+			background-color: #70AD47;
+			color: #FFF;
+			font-size: 1.1em;
+			font-weight: bold;
+			text-align: center;
+			text-shadow: -1px 1px #61973D;
+			width: 80%;
+			padding: 10px 15px;
+			margin: 10px auto;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+	}
+
+	.loginForm, .registerForm {
+		font-size: 1.2em;
+		padding: 10px 25px;
+		margin-top: 50px;
+		margin-bottom: 150px;
+
+		label {
+			margin: 20px; 
+		}
+
+		input {
+			width: 90%;
+			padding: 5px 10px;
+			margin: 0 auto 20px;
+		}
+
+		button {
+			width: 30%;
+			margin-left: 20px;
+		}
+
+		a {
+			color: #2E75B6;
+			position: relative;
+			top: 20px;
+			right: 20px;
+		}
+	}
+
+	.registerForm {
+		select {		
+			width: 90%;
+			margin-right: 20px;
+
+			option {
+				padding: 5px 10px;
+			}
+		}
 	}
 }		
