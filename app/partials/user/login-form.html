@@ -1,0 +1,32 @@
+<div>
+	<h2>{{headerTitle}}</h2>
+
+	<hr />
+
+	<form ng-submit="submit()" name="login">
+		<label for="userName">Username: 
+			<span ng-show="login.username.$error.required">
+				This is a required field!!
+			</span>
+		</label>
+		<input ng-model="user.username"
+			id="userName"
+			type="text"
+			name="username"
+			required />
+		
+		<label for="userPasswod">Password: 
+			<span ng-show="login.password.$error.required">
+				This is a required field!!
+			</span>
+		</label>
+		<input ng-model="user.password"
+			id="userPasswod"
+			type="password" 
+			name="password" 
+			required />
+		
+		<button ng-disabled="login.$invalid" type="submit">Login</button>
+		<a href="#/register" class="pull-right">Register here</a>
+	</form>
+</div>

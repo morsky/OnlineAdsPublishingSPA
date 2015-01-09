@@ -1,0 +1,97 @@
+<div>
+	<form ng-submit="submit()" name="register">
+		<div class="row">
+			<div class="col-md-6">
+				<label for="userName">Username:
+					<span ng-show="register.username.$error.required">
+						is a required!!
+					</span>
+				</label>
+				<input ng-model="user.username"
+					id="userName" 
+					type="text"
+					name="username"
+					required />							
+			</div>						
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label for="passwod">Password:
+					<span ng-show="register.password.$error.required">
+						is a required!!
+					</span>
+					<span ng-show="register.password.$error.minlength">
+						2 or more characters!!
+					</span>
+					<span ng-show="register.password.$error.maxlength">
+						over 100 characters!!
+					</span>
+				</label>
+				<input ng-model="user.password"
+					ng-minlength="2"
+					ng-maxlength="100"
+					id="passwod"
+					type="password"
+					name="password"
+					required />
+			</div>
+			<div class="col-md-6">
+				<label for="confirmPassword">Confirm password:
+					<span ng-show="register.confirmPassword.$error.required">
+						is a required!!
+					</span>
+				</label>
+				<input ng-model="user.confirmPassword" 
+				id="confirmPassword" 
+				type="password"
+				name="confirmPassword"
+				required />							
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label for="name">Name:
+					<span ng-show="register.name.$error.required">
+						is a required!!
+					</span>
+				</label>
+				<input ng-model="user.name" 
+				id="name" 
+				type="text" 
+				name="name"
+				required />
+				
+			</div>
+			<div class="col-md-6">
+				<label for="email">Email:
+					<span ng-show="register.email.$error.required">
+						is a required!!
+					</span>
+				</label>
+				<input ng-model="user.email" 
+					id="email" 
+					type="text" 
+					name="email"
+					required />							
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label for="phone">Phone:</label>
+				<input ng-model="user.phone" id="phone" type="text" />
+			</div>
+			<div class="col-md-6">
+				<label for="select">Town</label>
+				<select id="select" ng-model="user.townId" ng-options="town.id as town.name for town in towns" class="pull-right">
+					<option value="">-- Please select --</option>
+				</select>
+			</div>
+		</div>					
+
+		<button type="submit" ng-disabled="register.$invalid">Register</button>
+		<a href="#/login" class="pull-right">Login here</a>
+	</form>
+</div>

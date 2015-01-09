@@ -7,53 +7,8 @@
 				<left-public-sidebar></left-public-sidebar>
 			</div>
 			
-			<div class="col-md-offset-1 col-md-8 mainCenterContainer partContainer formShape registerForm">				
-				<form ng-submit="submit()">
-					<div class="row">
-						<div class="col-md-6">
-							<label for="userName">Username:</label>
-							<input ng-model="user.username" id="userName" type="text" />
-						</div>						
-					</div>
-
-					<div class="row">
-						<div class="col-md-6">
-							<label for="passwod">Password:</label>
-							<input ng-model="user.password" id="passwod" type="password" />
-						</div>
-						<div class="col-md-6">
-							<label for="confirmPassword">Confirm password:</label>
-							<input ng-model="user.confirmPassword" id="confirmPassword" type="password" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-6">
-							<label for="name">Name:</label>
-							<input ng-model="user.name" id="name" type="text" />
-						</div>
-						<div class="col-md-6">
-							<label for="email">Email:</label>
-							<input ng-model="user.email" id="email" type="text" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-6">
-							<label for="phone">Phone:</label>
-							<input ng-model="user.phone" id="phone" type="text" />
-						</div>
-						<div class="col-md-6">
-							<label for="select">Town</label>
-							<select id="select" ng-model="user.townId" ng-options="town.id as town.name for town in towns" class="pull-right">
-								<option value="">-- Please select --</option>
-							</select>
-						</div>
-					</div>					
-
-					<button type="submit">Register</button>
-					<a href="#/login" class="pull-right">Login here</a>
-				</form>
+			<div class="col-md-offset-1 col-md-8 mainCenterContainer partContainer formShape registerForm">
+				<register-form></register-form>				
 			</div>
 		</div>
 	</div>
