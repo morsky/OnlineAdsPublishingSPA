@@ -1,8 +1,8 @@
-var app = angular.module('mySPAProject', ['ngRoute', 'ngResource'])
+var app = angular.module('mySPAProject', ['ngRoute', 'ui.bootstrap.pagination'])
 
 app.constant('baseUrl', 'http://softuni-ads.azurewebsites.net/api/');
  // app.constant('baseUrl', 'http://localhost:1337/api/');
- app.constant('pageSize', 2);
+ app.constant('pageSize', 10);
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {

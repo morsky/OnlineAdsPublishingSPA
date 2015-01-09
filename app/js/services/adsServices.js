@@ -34,11 +34,11 @@
 
 app.factory('adsServices', ['$http', 'baseUrl', function($http, baseUrl) {
 	return {
-		getAds: function(category, town, success) {
+		getAds: function(params, success) {
 			$http({
 				method: 'GET',
 				url: baseUrl + 'ads',
-				params: { 'categoryid': category, 'townid': town },
+				params: params
 			})
 			.success(function(data) {
 				success(data);
