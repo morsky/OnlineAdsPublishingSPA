@@ -46,6 +46,8 @@ app.factory('authServices', ['$http', 'baseUrl', function($http, baseUrl) {
 
         isNormalUser : function() {
             var currentUser = this.getCurrentUser();
+            console.log(currentUser);
+            alert(currentUser);
             return (currentUser != undefined) && (!currentUser.isAdmin);
         },
 

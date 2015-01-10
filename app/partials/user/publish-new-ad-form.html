@@ -1,0 +1,42 @@
+<div>
+	<h2>{{headerTitle}}</h2>
+
+	<hr />
+
+	<form ng-submit="submit()" name="publishNewAd">
+		<label for=adTitle>Title:</label>
+		<input
+			ng-model="adData.title" 
+			type="text" 
+			id="adTitle" />
+		
+		<label for="adText">Text:</label>
+		<textarea
+			ng-model="adData.text" 
+			id="adText" />
+
+		<!-- <label for=adTitle>Title:</label>
+		<input type="file" id="adTitle" /> -->
+
+		<label for="category">Category:</label>
+		<select id="select"
+			ng-model="adData.categoryId"
+			ng-options="category.id as category.name for category in categories">
+			<option value="">-- Please select --</option>
+		</select>
+
+		<label for="town">Town:</label>
+		<select id="select"
+			ng-model="adData.townId"
+			ng-options="town.id as town.name for town in towns">
+			<option value="">-- Please select --</option>
+		</select>
+
+
+		<button ng-disabled="publishNewAd.$invalid"
+			ng-click="publishAd(adData)"
+			type="submit">
+			Publish
+		</button>
+	</form>
+</div>

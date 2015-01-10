@@ -85,7 +85,10 @@
 			</div>
 			<div class="col-md-6">
 				<label for="select">Town</label>
-				<select id="select" ng-model="user.townId" ng-options="town.id as town.name for town in towns" class="pull-right">
+				<select id="select"
+					ng-model="user.townId"
+					ng-options="town.id as town.name for town in towns" 
+					class="pull-right">
 					<option value="">-- Please select --</option>
 				</select>
 			</div>

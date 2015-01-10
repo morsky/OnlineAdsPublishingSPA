@@ -1,8 +1,8 @@
 <div>
 	<h1 class="text-center">Ads - {{headerTitle}}
-		<span ng-if="authService.isLoggedIn()"
+		<span ng-if="authServices.isLoggedIn()"
 			class="pull-right userLoggedinHeader">
-			<span>{{authService.getCurrentUser().username}}</span>
+			<span>{{authServices.getCurrentUser().username}}</span>
 			<a ng-click="logout()">Logout</a>
 		</span>
 	</h1>

@@ -2,6 +2,7 @@ app.controller('LoginController', ['$scope', '$location', 'authServices', 'notif
 	function($scope, $location, authServices, notifyServices) {
 	
 		$scope.headerTitle = 'Login';
+		$scope.hide = true;
 
 		$scope.submit = function(userData) {
 			var userData = $scope.user;

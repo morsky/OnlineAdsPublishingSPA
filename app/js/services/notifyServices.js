@@ -1,5 +1,4 @@
-app.factory('notifyServices',
-    function () {
+app.factory('notifyServices', [function () {
         return {
             showSuccess: function(msg) {
                 noty({
@@ -46,4 +45,4 @@ app.factory('notifyServices',
             }
         }
     }
-);
+]);

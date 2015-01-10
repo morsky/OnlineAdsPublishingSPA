@@ -2,6 +2,8 @@ app.controller('RegisterController', ['$scope', '$location', 'authServices', 'no
 	function($scope, $location, authServices, notifyServices, adsServices) {
 	
 		$scope.headerTitle = 'Register';
+		$scope.hide = true;
+
 		adsServices.getTowns(function(response) {
 			$scope.towns = response;
 		});
