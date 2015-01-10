@@ -19,7 +19,18 @@
 
 				<div class="row">
 					<div class="col-md-5">
-						<img src="" ng-src="{{ad.imageDataUrl}}" class="imageSize dotDashContainer">
+						<img src=""
+							ng-show="ad.imageDataUrl"
+							ng-src="{{ad.imageDataUrl}}" 
+							alt="Ad image"
+							class="imageSize dotDashContainer">
+
+						<img src=""
+							ng-hide="ad.imageDataUrl"
+							ng-src="img/noImage.png"
+							alt="no image"
+							class="imageSize dotDashContainer">
+
 					</div>
 					<div class="col-md-7">
 						<p class="dotDashContainer">{{ad.text}}</p>
