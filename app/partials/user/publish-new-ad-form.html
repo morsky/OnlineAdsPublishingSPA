@@ -4,16 +4,28 @@
 	<hr />
 
 	<form ng-submit="submit()" name="publishNewAd" class="publishAd">
-		<label for=adTitle>Title:</label>
+		<label for=adTitle>Title:
+			<span ng-show="publishNewAd.adTitile.$error.required">
+				is a required!!
+			</span>
+		</label>
 		<input
 			ng-model="adData.title" 
 			type="text" 
-			id="adTitle" />
+			id="adTitle"
+			name="adTitile" 
+			required />
 		
-		<label for="adText">Text:</label>
+		<label for="adText">Text:
+			<span ng-show="publishNewAd.adText.$error.required">
+				is a required!!
+			</span>
+		</label>
 		<textarea
 			ng-model="adData.text" 
-			id="adText" />
+			id="adText"
+			name="adText"
+			required />
 
 		<!-- <label for=adTitle>Title:</label>
 		<input type="file" id="adTitle" /> -->

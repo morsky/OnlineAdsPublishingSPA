@@ -1,3 +1,6 @@
+body {
+  background-color: #E2F0D9;
+}
 body h1,
 body p {
   margin: 0;
@@ -177,6 +180,10 @@ body .registerForm button {
   width: 30%;
   margin-left: 20px;
 }
+body .loginForm button:disabled,
+body .registerForm button:disabled {
+  background-color: #CCC;
+}
 body .loginForm a,
 body .registerForm a {
   color: #2E75B6;
@@ -218,4 +225,11 @@ body .publishAd select {
 }
 body .publishAd button {
   margin: 5% 0 5% 13%;
+}
+body .publishAd button:disabled {
+  background-color: #CCC;
+}
+body .selectedItem {
+  border: 1px solid #7F6000;
+  background-color: #DAA600;
 }

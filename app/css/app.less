@@ -1,4 +1,6 @@
 body {
+	background-color: #E2F0D9;
+
 	h1, p {
 		margin: 0;
 	}		
@@ -219,6 +221,10 @@ body {
 		button {
 			width: 30%;
 			margin-left: 20px;
+
+			&:disabled{
+				background-color: #CCC;
+			}
 		}
 
 		a {
@@ -273,6 +279,15 @@ body {
 
 		button {
 			margin: 5% 0 5% 13%;
+
+			&:disabled {
+				background-color: #CCC;
+			}
 		}
+	}
+
+	.selectedItem {
+		border: 1px solid #7F6000;
+		background-color: #DAA600;
 	}
 }		
