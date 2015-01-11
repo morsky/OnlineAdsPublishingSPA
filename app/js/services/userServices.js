@@ -28,8 +28,19 @@ app.factory('userServices', ['$http', 'baseUrl', 'authServices' , 'notifyService
                 });
             },
 
-            deactivateAd: function (id, success, error) {
-                // TODO
+            deactivateAd: function (id) {
+                console.log(id);
+                $http({
+                    method: 'PUT',
+                    url: baseUrl + 'user/ads/deactivate/' + id,
+                    headers: authServices.getAuthHeaders()
+                })
+                .success(function() {
+                    notifyServices.showSuccess('Ad successfully deactivated!!');
+                })
+                .error(function() {
+                    notifyServices.showError('Error deactivating ad!! Try again!!');
+                })
             },
 
             publishAgainAd: function (id, success, error) {

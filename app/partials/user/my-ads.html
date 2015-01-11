@@ -1,0 +1,78 @@
+<div>
+	
+	<img class="center" src="img/loading.gif" alt="loading.gif" ng-hide="adsLoaded">
+
+	<div ng-if="data.ads.length!=0">			
+		<ul ng-show="adsLoaded">
+			<pagination total-items="data.numItems"
+				ng-model="adsParams.startPage"
+				items-per-page="adsParams.pageSize"
+				ng-change="loadUserAds()"
+				max-size="9"
+				boundary-links="true" class="row">
+			</pagination>
+
+			<li ng-repeat="ad in data.ads" class="partContainer">
+				<h2>
+					{{ad.title}}
+					<span class="pull-right">{{ad.date | date:'d-MM-yyyy'}}</span>
+				</h2>
+
+				<div class="row">
+					<div class="col-md-4">
+						<img src=""
+							ng-show="ad.imageDataUrl"
+							ng-src="{{ad.imageDataUrl}}" 
+							alt="Ad image"
+							class="imageSize dotDashContainer">
+
+						<img src=""
+							ng-hide="ad.imageDataUrl"
+							ng-src="img/noImage.png"
+							alt="no image"
+							class="imageSize dotDashContainer">
+
+					</div>
+					<div class="col-md-6">
+						<p class="dotDashContainer">{{ad.text}}</p>
+
+						<div class="row">
+							<div class="col-md-3">
+								<p class="pull-right lineText">Category:</p>
+								<p class="pull-right lineText">Town:</p>
+							</div>
+							<div class="col-md-9">
+								<p class="dotDashContainer">{{ad.categoryName}}</p>
+								<p class="dotDashContainer">{{ad.townName}}</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-2">
+						<p class="dotDashContainer">{{ad.status}}</p>
+						<a ng-click=deactivateAd(ad.id)>Deactivate</a>
+					</div>
+				</div>				
+			</li>
+
+			<pagination total-items="data.numItems"
+				ng-model="adsParams.startPage"
+				items-per-page="adsParams.pageSize"
+				ng-change="loadUserAds()"
+				max-size="9"
+				boundary-links="true">
+			</pagination>
+		</ul>
+	</div>
+
+	<div ng-if="data.ads.length==0">
+		<div class="panel panel-warning col-md-10 noData">
+			<div class="panel-heading">
+				<h3 class="panel-title">Panel warning</h3>
+			</div>
+			<div class="panel-body">
+				No {{adType}} ads found.
+			</div>
+		</div>
+	</div>
+</div>
