@@ -6,7 +6,7 @@
 	<form ng-submit="submit()" name="login">
 		<label for="userName">Username: 
 			<span ng-show="login.username.$error.required">
-				This is a required field!!
+				is required!!
 			</span>
 		</label>
 		<input ng-model="user.username"
@@ -17,7 +17,7 @@
 		
 		<label for="userPasswod">Password: 
 			<span ng-show="login.password.$error.required">
-				This is a required field!!
+				is required!!
 			</span>
 		</label>
 		<input ng-model="user.password"

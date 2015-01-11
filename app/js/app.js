@@ -40,3 +40,5 @@ app.config(['$routeProvider', function($routeProvider) {
 			redirectTo: '/'
 		});
 }]);
+$rootScope.$broadcast //parent--> children
+$rootScope.$emit //children --> parent

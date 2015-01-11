@@ -233,3 +233,25 @@ body .selectedItem {
   border: 1px solid #7F6000;
   background-color: #DAA600;
 }
+body .myAdsButton {
+  display: block;
+  border: 1px solid #61973D;
+  border-radius: 5px;
+  background-color: #70AD47;
+  font-size: 1.2em;
+  color: #FFF;
+  padding: 10px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+body .myAdsButton:hover {
+  text-decoration: none;
+  background-color: #55A92E;
+}
+body .pagination {
+  margin-left: 12%;
+}
+body .pagination a {
+  margin: 1px;
+}
