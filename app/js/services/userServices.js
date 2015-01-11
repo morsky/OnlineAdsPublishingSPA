@@ -1,9 +1,10 @@
-app.factory('userServices', ['$http', 'baseUrl', 'authServices', function($http, baseUrl, authServices) {
+app.factory('userServices', ['$http', 'baseUrl', 'authServices' , 'notifyServices', 
+    function($http, baseUrl, authServices, notifyServices) {
         return {
             createNewAd: function (adData, success, error) {
                 $http({
                     method: 'POST',
-                    url: baseUrl + 'user/ads12',
+                    url: baseUrl + 'user/ads',
                     headers: authServices.getAuthHeaders(),
                     data: adData
                 })
@@ -18,8 +19,13 @@ app.factory('userServices', ['$http', 'baseUrl', 'authServices', function($http,
                     headers: authServices.getAuthHeaders(),
                     params: params
                 })
-                .success(success)
-                .error(error);
+                .success(function(data) {
+                    success(data);
+                })
+                .error(function(err) {
+                    console.log(err);
+                    notifyServices.showError('Error loading ads!!');
+                });
             },
 
             deactivateAd: function (id, success, error) {

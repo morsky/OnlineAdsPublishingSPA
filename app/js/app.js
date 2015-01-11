@@ -25,6 +25,17 @@ app.config(['$routeProvider', function($routeProvider) {
 				}]
 			}
 		})
+		.when('/user/ads/', {
+			templateUrl: 'partials/myAds.html',
+			resolve: {
+				isUserLogedin: ['$location', 'authServices', function($location, authServices) {
+					if ($location.path().indexOf("/user/") != -1 && !authServices.isLoggedIn()) {
+						// Authorization check: anonymous site visitors cannot access user routes
+						$location.path("/");
+					}
+				}]
+			}
+		})
 		.otherwise({
 			redirectTo: '/'
 		});

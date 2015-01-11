@@ -17,6 +17,10 @@ app.controller('UserPublishNewAdController', ['$scope', '$location', 'adsService
 			);
 		}
 
+		$scope.cancel = function() {
+			$location.path('/');
+		}
+
 		adsServices.getCategories(function(response) {
 			$scope.categories = response;
 		});

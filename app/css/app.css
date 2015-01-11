@@ -207,3 +207,15 @@ body .userLoggedinHeader a {
   color: #4275B6;
   margin-left: 10px;
 }
+body .publishAd textarea,
+body .publishAd select {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+body .publishAd select {
+  padding: 10px;
+}
+body .publishAd button {
+  margin: 5% 0 5% 13%;
+}

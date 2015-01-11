@@ -3,7 +3,7 @@
 
 	<hr />
 
-	<form ng-submit="submit()" name="publishNewAd">
+	<form ng-submit="submit()" name="publishNewAd" class="publishAd">
 		<label for=adTitle>Title:</label>
 		<input
 			ng-model="adData.title" 
@@ -34,9 +34,12 @@
 
 
 		<button ng-disabled="publishNewAd.$invalid"
-			ng-click="publishAd(adData)"
-			type="submit">
+			ng-click="publishAd(adData)">
 			Publish
+		</button>
+
+		<button ng-click="cancel()">
+			Cancel
 		</button>
 	</form>
 </div>
