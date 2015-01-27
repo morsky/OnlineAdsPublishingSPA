@@ -4,10 +4,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2">
-				<left-public-sidebar ng-if="authServices.isAnonymous()" ></left-public-sidebar>
+				<left-public-sidebar ng-if="authServices.isAnonymous()"></left-public-sidebar>
 				<left-user-sidebar ng-if="authServices.isLoggedIn()"></left-user-sidebar>
-				<!-- <left-user-sidebar ng-show="authServices.isNormalUser()"></left-user-sidebar> -->
-				<!-- {{authServices.isNormalUser()}} -->
 			</div>
 			
 			<div class="col-md-8 mainCenterContainer">

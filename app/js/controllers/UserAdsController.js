@@ -1,5 +1,5 @@
-app.controller('UserAdsController', ['$scope', 'userServices', 'pageSize',
-	function($scope, userServices, pageSize) {	
+app.controller('UserAdsController', ['$scope', '$location', 'authServices', 'userServices', 'pageSize',
+	function($scope, $location, authServices, userServices, pageSize) {	
 		$scope.headerTitle = 'My Ads';
 		$scope.adsLoaded = false;
 		$scope.hideMyAdsPanel = true;
@@ -61,12 +61,17 @@ app.controller('UserAdsController', ['$scope', 'userServices', 'pageSize',
 			alert('TODO Delete' + id);
 		}
 
-		loadUserAds();
-
 		$scope.loadUserAds = function() {
 			$scope.adsLoaded = false;
 			loadUserAds();
 		};
+
+		if (authServices.isLoggedIn()) {
+			loadUserAds();
+		}
+		else {
+			location.path('/');
+		}		
 
 		function loadUserAds() {
 			userServices.getUserAds($scope.adsParams, function(response) {
