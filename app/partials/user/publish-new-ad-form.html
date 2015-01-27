@@ -4,31 +4,43 @@
 	<hr />
 
 	<form ng-submit="submit()" name="publishNewAd" class="publishAd">
-		<label for=adTitle>Title:
-			<span ng-show="publishNewAd.adTitile.$error.required">
-				is required!!
-			</span>
-		</label>
-		<input
-			ng-model="adData.title" 
-			type="text" 
-			id="adTitle"
-			name="adTitile" 
-			required />
-		
-		<label for="adText">Text:
-			<span ng-show="publishNewAd.adText.$error.required">
-				is required!!
-			</span>
-		</label>
-		<textarea
-			ng-model="adData.text" 
-			id="adText"
-			name="adText"
-			required />
+		<div class="row">
+			<div class="col-md-8">
+				<label for=adTitle>Title:
+					<span ng-show="publishNewAd.adTitile.$error.required">
+						is required!!
+					</span>
+				</label>
+				<input
+					ng-model="adData.title" 
+					type="text" 
+					id="adTitle"
+					name="adTitile" 
+					required />
 
-		<!-- <label for=adTitle>Title:</label>
-		<input type="file" id="adTitle" /> -->
+				<label for="adText">Text:
+					<span ng-show="publishNewAd.adText.$error.required">
+						is required!!
+					</span>
+				</label>
+				<textarea
+					ng-model="adData.text" 
+					id="adText"
+					name="adText"
+					required />
+			</div>
+
+			<div class="col-md-4 image-holder">
+				<div>
+					<label for="image">Image:</label>
+					
+					<div>
+						<p class="image-box">Image Preview</p>
+						<input type="file" id="image" onchange="angular.element(this).scope().fileSelected(this)" />
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<label for="category">Category:</label>
 		<select id="select"

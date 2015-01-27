@@ -4,7 +4,7 @@ app.controller('AppController', ['$scope', '$route', 'authServices', 'notifyServ
 
 		$scope.logout = function() {
 			authServices.logout();
-			notifyServices.showInfo("Logout successful");
+			notifyServices.showSuccess("Logout successful");
 			// $location.path('/');
 			$route.reload();
 		};

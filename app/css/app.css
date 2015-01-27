@@ -255,3 +255,14 @@ body .pagination {
 body .pagination a {
   margin: 1px;
 }
+body .image-holder {
+  text-align: center;
+  padding-right: 5%;
+}
+body .image-holder input[type=file] {
+  display: block;
+  width: 110px;
+}
+body .image-box img {
+  width: 100%;
+}
