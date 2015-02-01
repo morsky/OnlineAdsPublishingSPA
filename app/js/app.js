@@ -36,6 +36,17 @@ app.config(['$routeProvider', function($routeProvider) {
 				}]
 			}
 		})
+		.when('/user/ads/edit/:id', {
+			templateUrl: 'partials/edit-ad-form.html',
+			resolve: {
+				isUserLogedin: ['$location', 'authServices', function($location, authServices) {
+					if ($location.path().indexOf("/user/") != -1 && !authServices.isLoggedIn()) {
+						// Authorization check: anonymous site visitors cannot access user routes
+						$location.path("/");
+					}
+				}]
+			}
+		})
 		.when('/user/ads/deleteAd/:id', {
 			templateUrl: 'partials/delete-ad-form.html',
 			resolve: {
@@ -50,4 +61,5 @@ app.config(['$routeProvider', function($routeProvider) {
 		.otherwise({
 			redirectTo: '/'
 		});
-}]);
+	}
+]);

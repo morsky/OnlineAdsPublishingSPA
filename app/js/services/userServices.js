@@ -1,5 +1,5 @@
-app.factory('userServices', ['$http', '$location', 'baseUrl', 'authServices' , 'notifyServices', 
-    function($http, $location, baseUrl, authServices, notifyServices) {
+app.factory('userServices', ['$http', 'baseUrl', 'authServices' , 'notifyServices', 
+    function($http, baseUrl, authServices, notifyServices) {
         return {
             createNewAd: function(adData) {
                 $http({
@@ -33,7 +33,6 @@ app.factory('userServices', ['$http', '$location', 'baseUrl', 'authServices' , '
             },
 
             deactivateAd: function(id) {
-                // console.log(id);
                 $http({
                     method: 'PUT',
                     url: baseUrl + 'user/ads/deactivate/' + id,
@@ -69,10 +68,24 @@ app.factory('userServices', ['$http', '$location', 'baseUrl', 'authServices' , '
                 })
                 .success(function(data) {
                     sessionStorage['adData'] = JSON.stringify(data);
-                    $location.path('/user/ads/deleteAd/:' + id);
                 })
                 .error(function() {
                     notifyServices.showError('Error loading ad!! Try again!!');
+                })
+            },
+
+            editAd: function(id, data) {
+                $http({
+                    method: 'PUT',
+                    url: baseUrl + 'user/ads/' + id,
+                    headers: authServices.getAuthHeaders(),
+                    data: data
+                })
+                .success(function() {
+                    notifyServices.showSuccess('Ad successfully edited!!');
+                })
+                .error(function() {
+                    notifyServices.showError('Error editing ad!!');
                 })
             },
 
@@ -84,7 +97,6 @@ app.factory('userServices', ['$http', '$location', 'baseUrl', 'authServices' , '
                 })
                 .success(function() {
                     notifyServices.showSuccess('Ad successfully deleted!!');
-                    $location.path('/user/ads');
                 })
                 .error(function() {
                     notifyServices.showError('Error deleting ad!!');

@@ -1,0 +1,77 @@
+<div>
+	<h2>{{headerTitle}}</h2>
+
+	<hr />
+
+	<form ng-submit="submit()" name="editAd" class="publishAd">
+		<div class="row">
+			<div class="col-md-8">
+				<label for=adTitle>Title:
+					<span ng-show="editAd.adTitile.$error.required">
+						is required!!
+					</span>
+				</label>
+				<input
+					ng-model="adData.title" 
+					type="text" 
+					id="adTitle"
+					name="adTitile" 
+					required />
+
+				<label for="adText">Text:
+					<span ng-show="editAd.adText.$error.required">
+						is required!!
+					</span>
+				</label>
+				<textarea
+					ng-model="adData.text" 
+					id="adText"
+					name="adText"
+					required />
+			</div>
+
+			<div class="col-md-4 image-holder">
+				<div>
+					<label for="image">Image:</label>
+
+					<img ng-src="{{image}}"
+						ng-show="!showBrowse"
+						class="imageSize dotDashContainer">
+					
+					<div ng-show="showBrowse">
+						<p class="image-box">Image Preview</p>
+						<input type="file" id="image" onchange="angular.element(this).scope().fileSelected(this)" />
+					</div>
+
+					<div>
+						<button ng-click="showBrowse = !showBrowse">Change image</button>
+						<button ng-click=delete()>Delete image</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<label for="category">Category:</label>
+		<select id="select"
+			ng-model="adData.categoryId"
+			ng-options="category.id as category.name for category in categories">
+			<option value="">-- Please select --</option>
+		</select>
+
+		<label for="town">Town:</label>
+		<select id="select"
+			ng-model="adData.townId"
+			ng-options="town.id as town.name for town in towns">
+			<option value="">-- Please select --</option>
+		</select>
+
+
+		<button ng-click="edit(adData)">
+			Edit
+		</button>
+
+		<button ng-click="cancel()">
+			Cancel
+		</button>
+	</form>
+</div>

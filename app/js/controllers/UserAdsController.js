@@ -1,5 +1,5 @@
-app.controller('UserAdsController', ['$scope', 'authServices', 'userServices', 'pageSize',
-	function($scope, authServices, userServices, pageSize) {	
+app.controller('UserAdsController', ['$scope', '$location', 'authServices', 'userServices', 'pageSize',
+	function($scope, $location, authServices, userServices, pageSize) {	
 		$scope.headerTitle = 'My Ads';
 		$scope.adsLoaded = false;
 		$scope.hideMyAdsPanel = true;
@@ -11,7 +11,7 @@ app.controller('UserAdsController', ['$scope', 'authServices', 'userServices', '
 
 		$scope.showAll = function() {
 			$scope.adsParams.status = '';
-			$scope.select = true;
+			$scope.showPanel = false;
 			loadUserAds();
 		}
 
@@ -50,6 +50,8 @@ app.controller('UserAdsController', ['$scope', 'authServices', 'userServices', '
 
 		$scope.editAd = function(id) {
 			alert('TODO Edit' + id);
+			userServices.getAdById(id);
+			$location.path('/user/ads/edit/:' + id);
 		}
 
 		$scope.publishAd = function(id) {
@@ -59,12 +61,8 @@ app.controller('UserAdsController', ['$scope', 'authServices', 'userServices', '
 
 		$scope.deleteAd = function(id) {
 			userServices.getAdById(id);
+			$location.path('/user/ads/deleteAd/:' + id);
 		}
-
-		$scope.loadUserAds = function() {
-			$scope.adsLoaded = false;
-			loadUserAds();
-		};
 
 		if (authServices.isLoggedIn()) {
 			loadUserAds();

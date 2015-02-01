@@ -26,7 +26,8 @@ app.factory('authServices', ['$http', 'baseUrl', function($http, baseUrl) {
         },
 
         logout: function() {
-            delete sessionStorage['currentUser'];
+            // delete sessionStorage['currentUser'];
+            sessionStorage.clear();
         },
 
         getCurrentUser : function() {

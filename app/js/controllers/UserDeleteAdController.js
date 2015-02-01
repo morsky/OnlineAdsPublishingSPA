@@ -8,6 +8,7 @@ app.controller('UserDeleteAdController', ['$scope', '$location', 'userServices',
 		$scope.delete = function() {
 			var id = $scope.adData.id;
 			userServices.deleteAd(id);
+			$location.path('/user/ads');
 		};
 
 		$scope.cancel = function() {
