@@ -116,12 +116,12 @@ body .asideContainer ul {
   padding-left: 0;
 }
 body .dotDashContainer {
-  border: 1px dashed #649B3F;
+  border: 1px solid #649B3F;
   background-color: #C5E0B4;
   margin-bottom: 10px;
 }
 body .lineText {
-  border: 1px dashed #A9D18E;
+  border: 1px solid #A9D18E;
   margin-bottom: 10px;
 }
 body .formShape {
@@ -265,4 +265,16 @@ body .image-holder input[type=file] {
 }
 body .image-box img {
   width: 100%;
+}
+body .deleteAd div {
+  margin-bottom: 10px;
+}
+body .deleteAd div div h3 {
+  font-weight: bold;
+  margin: 0;
+}
+body .deleteAd div div p {
+  padding: 5px 10px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }

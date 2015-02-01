@@ -1,5 +1,5 @@
-app.factory('userServices', ['$http', 'baseUrl', 'authServices' , 'notifyServices', 
-    function($http, baseUrl, authServices, notifyServices) {
+app.factory('userServices', ['$http', '$location', 'baseUrl', 'authServices' , 'notifyServices', 
+    function($http, $location, baseUrl, authServices, notifyServices) {
         return {
             createNewAd: function(adData) {
                 $http({
@@ -58,6 +58,36 @@ app.factory('userServices', ['$http', 'baseUrl', 'authServices' , 'notifyService
                 })
                 .error(function() {
                     notifyServices.showError('Error publishing ad!! Try again!!');
+                })
+            },
+
+            getAdById: function(id) {
+                $http({
+                    method: 'GET',
+                    url: baseUrl + 'user/ads/' + id,
+                    headers: authServices.getAuthHeaders()
+                })
+                .success(function(data) {
+                    sessionStorage['adData'] = JSON.stringify(data);
+                    $location.path('/user/ads/deleteAd/:' + id);
+                })
+                .error(function() {
+                    notifyServices.showError('Error loading ad!! Try again!!');
+                })
+            },
+
+            deleteAd: function(id) {
+                $http({
+                    method: 'DELETE',
+                    url: baseUrl + 'user/ads/' + id,
+                    headers: authServices.getAuthHeaders()
+                })
+                .success(function() {
+                    notifyServices.showSuccess('Ad successfully deleted!!');
+                    $location.path('/user/ads');
+                })
+                .error(function() {
+                    notifyServices.showError('Error deleting ad!!');
                 })
             }
         }

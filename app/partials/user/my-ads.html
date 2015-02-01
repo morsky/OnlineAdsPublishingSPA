@@ -37,12 +37,16 @@
 
 						<div class="row">
 							<div class="col-md-3">
-								<p class="pull-right lineText">Category:</p>
-								<p class="pull-right lineText">Town:</p>
+								<p ng-show="ad.categoryName"
+									class="pull-right lineText">Category:</p>
+								<p ng-show="ad.townName"
+									class="pull-right lineText">Town:</p>
 							</div>
 							<div class="col-md-9">
-								<p class="dotDashContainer">{{ad.categoryName}}</p>
-								<p class="dotDashContainer">{{ad.townName}}</p>
+								<p ng-show="ad.categoryName" 	
+									class="dotDashContainer">{{ad.categoryName}}</p>
+								<p ng-show="ad.townName"
+									class="dotDashContainer">{{ad.townName}}</p>
 							</div>
 						</div>
 					</div>

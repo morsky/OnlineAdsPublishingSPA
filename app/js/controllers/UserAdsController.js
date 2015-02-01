@@ -58,7 +58,7 @@ app.controller('UserAdsController', ['$scope', 'authServices', 'userServices', '
 		}
 
 		$scope.deleteAd = function(id) {
-			alert('TODO Delete' + id);
+			userServices.getAdById(id);
 		}
 
 		$scope.loadUserAds = function() {

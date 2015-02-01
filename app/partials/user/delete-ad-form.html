@@ -1,0 +1,53 @@
+<div class="deleteAd">
+	<h2>{{formHeader}}</h2>
+	
+	<hr />
+
+	<div class="row">
+		<div class="col-md-offset-1 col-md-8">
+			<h3>{{adData.title}}</h3>
+		</div>
+
+		<div class="col-md-2">
+			{{adData.date | date:'d-MMM-yyyy'}}
+		</div>		
+	</div>
+	 
+	<div class="row">
+		<div class="col-md-4">
+			<img src=""					
+				ng-src="{{image}}"
+				class="imageSize dotDashContainer">
+		</div>
+
+		<div class="col-md-7">
+			<div>
+				<p class="dotDashContainer">{{adData.text}}</p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<p ng-show="adData.categoryName"
+						class="pull-right lineText">Category:</p>
+					<p ng-show="adData.townName"
+						class="pull-right lineText">Town:</p>
+				</div>
+
+				<div class="col-md-9">
+					<p ng-show="adData.categoryName"
+						class="dotDashContainer ng-binding">{{adData.categoryName}}</p>
+					<p ng-show="adData.townName"
+						class="dotDashContainer ng-binding">{{adData.townName}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<button ng-click="delete()">
+		Delete
+	</button>
+
+	<button ng-click="cancel()">
+		Cancel
+	</button>
+</div>
